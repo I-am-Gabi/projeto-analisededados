@@ -9,11 +9,18 @@ import matplotlib.pyplot as plt
 import numpy as np
 import csv
 
-with open('etnia.csv', newline='', encoding='utf_8') as f:
+header = []
+content = []
+
+with open('etnia.csv', newline='', encoding='utf_8') as f: 
     reader = csv.reader(f)
-    header = next(reader, None)
-    content = list(reader)
+    i = next(reader)
+    for row in reader:
+    	header.append(row[0:1][0])
+    	content.append(row[1:])
+    
+
 
 #print(reader)
-print(header)
-#print(content)
+#print(header)
+print(content[0])
