@@ -13,14 +13,14 @@ header = []
 content = []
 
 with open('etnia.csv', newline='', encoding='utf_8') as f: 
-    reader = csv.reader(f)
-    i = next(reader)
+    reader = csv.reader(f) 
     for row in reader:
     	header.append(row[0:1][0])
-    	content.append(row[1:])
+    	print(row[1:])
+    	#content.append(row[1:])
     
 
 
 #print(reader)
 #print(header)
-print(content[0])
+#print(content[0])
