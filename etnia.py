@@ -22,11 +22,11 @@ with open('dadosEtnicos.csv', newline='', encoding='utf_8') as f:
     	content.append(l)
     	if (l[-1] != 'Total'):
     		total.append(float(l[-1]))
-
-x = np.arange(len(header[1:]))
+            
 x_name = ['Branco(a)', 'Negro(a)', 'Amarelo(a)', 'Pardo(a)', 'Indígena', 'Quilombo', 'Não se aplica', 'Não respondeu']#header[1:]
+x = np.arange(len(x_name))
 plt.bar(x, total)  
-plt.xticks(x, x_name) 
+plt.xticks(x, x_name, rotation=30, fontsize=8) 
 
 
 plt.xlabel('Etnias')

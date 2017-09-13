@@ -26,7 +26,7 @@ with open('meio_transporte.csv', newline='', encoding='utf_8') as f:
 x = np.arange(len(header[1:]))
 x_name = ['Coletivo', 'Veículo próprio', 'Outro', 'Não se aplica', 'Não respondeu'] #header[1:]
 plt.bar(x, total)  
-plt.xticks(x, x_name) 
+plt.xticks(x, x_name, rotation=30, fontsize=8) 
 
 
 plt.xlabel('Meios de transporte')

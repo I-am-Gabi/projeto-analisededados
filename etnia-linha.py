@@ -28,11 +28,13 @@ with open('dadosEtnicos.csv', newline='', encoding='utf_8') as f:
 etnias = ['Branco(a)', 'Negro(a)', 'Amarelo(a)', 'Pardo(a)', 'Indígena', 'Quilombo', 'Não se aplica', 'Não respondeu']#header[1:]
 
 for x in range(1, 9):
-    #print(etnias[x-1], content[x][:-1]) 
     plt.plot(range(len(content[x][:-1])), content[x][:-1], linestyle='--', label='%s' % etnias[x-1])
 
+x_values = content[0][:-1]
 plt.ylabel('matriculas')
 plt.xlabel('anos')
+plt.xticks(range(len(x_values)), x_values, rotation=30, fontsize=8)
+
 plt.legend() 
 
 plt.show()
