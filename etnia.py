@@ -23,15 +23,17 @@ with open('dadosEtnicos.csv', newline='', encoding='utf_8') as f:
     	if (l[-1] != 'Total'):
     		total.append(float(l[-1]))
 
+x = np.arange(len(header[1:]))
+x_name = ['Branco(a)', 'Negro(a)', 'Amarelo(a)', 'Pardo(a)', 'Indígena', 'Quilombo', 'Não se aplica', 'Não respondeu']#header[1:]
+plt.bar(x, total)  
+plt.xticks(x, x_name) 
 
-#print(total)
-#print(header[1:])
-plt.bar([0, 1, 2, 3, 4, 5, 6, 7],  total,0.5, align='center')
-#plt.xticks(total, header[1:])
-plt.yticks([0, 1, 2, 3, 4, 5, 6, 7], header[1:])
-#plt.legend(handles=[red,green,blue])
-plt.show()
-#print(content)
+
+plt.xlabel('Etnias')
+plt.ylabel('N° de inscritos')
+plt.title('Etnias dos alunos matriculados no ano de 2013')
+
+plt.show() 
 
 
     
